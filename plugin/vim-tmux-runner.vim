@@ -30,7 +30,8 @@ function! s:CreateRunnerPane(...)
         call s:GitCdUp()
     endif
     if g:VtrInitialCommand != ""
-        call s:SendKeys(g:VtrInitialCommand)
+		let initial_command = substitute(g:VtrInitialCommand, " ", "\ ", "")
+        call s:SendKeys(initial_command)
     endif
 endfunction
 
